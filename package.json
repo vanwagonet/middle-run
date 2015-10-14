@@ -1,0 +1,35 @@
+{
+  "name": "middle-run",
+  "version": "1.0.0-rc1",
+  "description": "Run a series of async middleware on both client and server",
+  "keywords": [
+    "promise",
+    "async",
+    "await",
+    "middleware",
+    "universal",
+    "isomorphic"
+  ],
+  "main": "index.js",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "blue-tape": "^0.1.10",
+    "faucet": "0.0.1"
+  },
+  "scripts": {
+    "test": "babel-node tests/index.js | faucet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/thetalecrafter/middle-run.git"
+  },
+  "author": {
+    "name": "Andy VanWagoner",
+    "email": "thetalecrafter@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thetalecrafter/middle-run/issues"
+  },
+  "homepage": "https://github.com/thetalecrafter/middle-run"
+}
