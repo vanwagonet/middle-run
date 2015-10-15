@@ -3,12 +3,12 @@
 > Run a series of async middleware on both client and server.
 
 [![npm Version][npm-image]][npm]
-[![Dependency Status][deps-image]][deps]
-[![Dev Dependency Status][dev-deps-image]][dev-deps]
 [![Build Status][build-image]][build]
-
 [![JS Standard Style][style-image]][style]
 [![MIT License][license-image]][LICENSE]
+
+[![Dependency Status][deps-image]][deps]
+[![Dev Dependency Status][dev-deps-image]][dev-deps]
 
 
 Quick Start
