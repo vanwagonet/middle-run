@@ -34,15 +34,33 @@ run([
     // after awaiting next() to resolve, all downstream middleware are done
     ctx.duration = Date.now() - start
   },
-  (ctx, next, stop) => {
-    // all info is passed as arguments, no need for `this`
-    // stop() prevents further downstream middleware from running
-    stop()
-  },
+  // since run returns a function with the same signature of middleware
+  // you can compose multiple together if needed
+  run([
+    (ctx, next, stop) => {
+      // all info is passed as arguments, no need for `this`
+      // stop() prevents further downstream middleware from running
+      stop()
+    }
+  ]),
   () => {
     // this middleware won't run because `stop()` was called
   }
-])
+
+// run returns a function with the same signature as a middleware function
+// to start the series, pass in the desired context object
+// you can optionally pass in functions that are called when the series completes
+// and when the series is stopped
+])(context, function onComplete () {}, function onStop () {})
+```
+
+
+API
+---
+
+```
+module "middle-run" = (middleware: Array<Middleware>) => Middleware
+type Middleware = (context: any, next: Function, stop: Function) => ?Promise
 ```
 
 
