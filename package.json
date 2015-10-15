@@ -1,6 +1,6 @@
 {
   "name": "middle-run",
-  "version": "1.0.0-rc2",
+  "version": "1.0.0",
   "description": "Run a series of async middleware on both client and server",
   "keywords": [
     "promise",
