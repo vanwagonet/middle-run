@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.0.0-rc1
+
+* **Breaking Change**
+  * middleware recieve a single argument object with `context`, `next`, and `resolve` as properties
+
+* **New Feature**
+  * `resolve` provides a way to set a final value for the middleware series
+  * `resolve` allows an async function to pass control back upstream before returning or resolving
+
+## 1.0.0
+
+no changes since rc2
+
 ## 1.0.0-rc2
 
 * **Breaking Change**
