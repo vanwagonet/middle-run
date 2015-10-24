@@ -1,23 +1,30 @@
 module.exports = function run (middleware) {
-  return function (context, onComplete, onStop) {
-    var index = 0
+  middleware = [].concat(middleware)
 
-    var isDone = false
-    function stop () {
-      if (!isDone) {
-        isDone = true
-        if (onStop) onStop()
-      }
-    }
+  return function (parent) {
+    var index = 0
+    var isResolved = false
+    var value
+
+    var context = parent && parent.context || {}
+    var parentKeys = parent ? Object.keys(parent) : []
+    var parentKeysLength = parentKeys.length
 
     function loop () {
-      if (isDone || index >= middleware.length) {
-        return onComplete && onComplete()
+      if (isResolved) {
+        return value // always resolve `next()` to `value`
+      } else if (index >= middleware.length) {
+        return parent && parent.next && parent.next() // chain parent
+      }
+
+      var args = { context: context }
+      for (var i = 0; i < parentKeysLength; ++i) {
+        args[parentKeys[i]] = parent[parentKeys[i]]
       }
 
       var nextCalled = false
       var nextResult
-      function next () {
+      args.next = function next () {
         if (!nextCalled) {
           nextCalled = true
           nextResult = loop()
@@ -25,11 +32,30 @@ module.exports = function run (middleware) {
         return nextResult
       }
 
+      var stepResolve
+      var stepPromise = new Promise(function (resolve) {
+        stepResolve = resolve
+      })
+      args.resolve = function resolve (val) {
+        isResolved = true
+        if (stepResolve) {
+          if (arguments.length >= 1) value = val
+          stepResolve()
+          stepResolve = null
+        }
+        return finalPromise
+      }
+
       var current = middleware[index++]
-      var result = current(context, next, stop)
-      return Promise.resolve(result).then(next)
+      var result = current(args)
+      return Promise.race([ result, stepPromise ]).then(args.next)
     }
 
-    return new Promise(function (resolve) { resolve(loop()) })
+    var loopPromise = Promise.resolve().then(loop)
+    var finalPromise = loopPromise.then(function () {
+      var shouldResolveParent = isResolved && parent && parent.resolve
+      return shouldResolveParent ? parent.resolve(value) : value
+    })
+    return loopPromise
   }
 }
