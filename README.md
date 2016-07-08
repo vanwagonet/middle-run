@@ -7,9 +7,6 @@
 [![JS Standard Style][style-image]][style]
 [![MIT License][license-image]][LICENSE]
 
-[![Dependency Status][deps-image]][deps]
-[![Dev Dependency Status][dev-deps-image]][dev-deps]
-
 middle-run is a simple library to compose and run ES7 async functions in order. This allows you to build out a process in a manner similar to [Connect][connect], only not necessarily specific to fulfilling a request on a server. middle-run can be used on both client and server.
 
 
@@ -131,10 +128,6 @@ This software is free to use under the MIT license. See the [LICENSE-MIT file][L
 
 [npm]: https://www.npmjs.org/package/middle-run
 [npm-image]: https://img.shields.io/npm/v/middle-run.svg
-[deps]: https://david-dm.org/thetalecrafter/middle-run
-[deps-image]: https://img.shields.io/david/thetalecrafter/middle-run.svg
-[dev-deps]: https://david-dm.org/thetalecrafter/middle-run#info=devDependencies
-[dev-deps-image]: https://img.shields.io/david/dev/thetalecrafter/middle-run.svg
 [build]: https://travis-ci.org/thetalecrafter/middle-run
 [build-image]: https://img.shields.io/travis/thetalecrafter/middle-run.svg
 [style]: https://github.com/feross/standard

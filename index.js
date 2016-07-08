@@ -1,5 +1,9 @@
+'use strict'
+
 module.exports = function run (middleware) {
-  middleware = [].concat(middleware)
+  if (!Array.isArray(middleware)) {
+    middleware = [ middleware ]
+  }
 
   return function (parent) {
     var index = 0

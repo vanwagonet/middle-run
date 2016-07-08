@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.1
+
+* **Polish**
+  * avoid creating a new array, when one was already passed in
+  * use mocha and babel 6 for testing
+
+## 2.0.0
+
+no changes since rc1
+
 ## 2.0.0-rc1
 
 * **Breaking Change**
@@ -27,4 +37,3 @@ no changes since rc2
   * Continues to next middleware when current resolves
   * Explicitly start the next middleware for koa-like true middleware
   * Explicitly stop moving to next middleware when process is complete
-
