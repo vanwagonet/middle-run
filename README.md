@@ -1,5 +1,7 @@
 # middle-run
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/thetalecrafter/middle-run.svg)](https://greenkeeper.io/)
+
 > Run a series of async middleware functions on both client and server.
 
 [![npm Version][npm-image]][npm]
