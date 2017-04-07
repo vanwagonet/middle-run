@@ -10,7 +10,7 @@ module.exports = function run (middleware) {
     var isResolved = false
     var value
 
-    var context = parent && parent.context || {}
+    var context = (parent && parent.context) || {}
     var parentKeys = parent ? Object.keys(parent) : []
     var parentKeysLength = parentKeys.length
 

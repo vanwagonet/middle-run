@@ -33,7 +33,7 @@
     "babel-runtime": "^6.9.2",
     "mocha": "^3.0.0",
     "power-assert": "^1.4.1",
-    "standard": "^8.0.0"
+    "standard": "^10.0.0"
   },
   "scripts": {
     "pretest": "standard index.js",
