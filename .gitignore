@@ -18,9 +18,9 @@ Session.vim
 
 # Node
 node_modules
+package-lock.json
 
 # generated
 browser.js
 browser.js.map
 coverage
-
