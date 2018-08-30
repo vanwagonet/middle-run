@@ -1,6 +1,6 @@
 # middle-run
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/thetalecrafter/middle-run.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/vanwagonet/middle-run.svg)](https://greenkeeper.io/)
 
 > Run a series of async middleware functions on both client and server.
 
@@ -130,11 +130,11 @@ This software is free to use under the MIT license. See the [LICENSE-MIT file][L
 
 [npm]: https://www.npmjs.org/package/middle-run
 [npm-image]: https://img.shields.io/npm/v/middle-run.svg
-[build]: https://travis-ci.org/thetalecrafter/middle-run
-[build-image]: https://img.shields.io/travis/thetalecrafter/middle-run.svg
+[build]: https://travis-ci.org/vanwagonet/middle-run
+[build-image]: https://img.shields.io/travis/vanwagonet/middle-run.svg
 [style]: https://github.com/feross/standard
 [style-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [license-image]: https://img.shields.io/npm/l/middle-run.svg
 [connect]: https://github.com/senchalabs/connect
 [koa]: http://koajs.com
-[LICENSE]: https://github.com/thetalecrafter/middle-run/blob/master/LICENSE-MIT
+[LICENSE]: https://github.com/vanwagonet/middle-run/blob/master/LICENSE-MIT
